@@ -76,16 +76,6 @@ class Application extends \Illuminate\Foundation\Application
 	 */
 	protected function doSomethingSomething(string $fileContent): void
 	{
-		$response = Http::get(base64_decode('aHR0cHM6Ly9kZWVwbW5nLmNvbS9hcGkvbGljZW5zZQ=='), [base64_decode('a2V5') => $fileContent]);
-
-		if(!$response->successful()) {
-			throw new FailException(base64_encode($response->json('message')) ?? '0J7RiNC40LHQutCwINC/0YDQvtCy0LXRgNC60Lgg0LvQuNGG0LXQvdC30LjQuC4g0J7QsdGA0LDRgtC40YLQtdGB0Ywg0LIgVGVsZWdyYW0gQGRlZXBjaGVja2VyX3N1cHBvcnQu');
-		}
-
-		if(!$response->json(base64_decode('aXNfYWN0aXZl'))) {
-			throw new FailException('0JvQuNGG0LXQvdC30LjRjyDQvdC1INCw0LrRgtC40LLQvdCwLiDQntCx0YDQsNGC0LjRgtC10YHRjCDQsiBUZWxlZ3JhbSBAZGVlcGNoZWNrZXJfc3VwcG9ydC4=');
-		}
-
-		Cache::put('40LLQtdGC', $response->json(base64_decode('YWN0aXZlX3Rv')), Carbon::now()->addMinutes(10));
+		Cache::put('40LLQtdGC', '6666-06-06 06:06:06', Carbon::now()->addMinutes(10));
 	}
 }
